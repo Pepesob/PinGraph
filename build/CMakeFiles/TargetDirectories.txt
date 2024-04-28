@@ -1,3 +1,0 @@
-/home/pepe/CodeProjects/PinGraph/build/CMakeFiles/PinGraph.dir
-/home/pepe/CodeProjects/PinGraph/build/CMakeFiles/edit_cache.dir
-/home/pepe/CodeProjects/PinGraph/build/CMakeFiles/rebuild_cache.dir
