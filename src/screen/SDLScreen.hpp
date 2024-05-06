@@ -6,7 +6,7 @@
 #include <SDL2/SDL_video.h>
 
 
-class SDLScreen: public Screen<SDL_Window> {
+class SDLScreen: public Screen<SDL_Renderer> {
 
 public:
     SDLScreen(int window_width, int window_height);
@@ -14,6 +14,8 @@ public:
     virtual void clear() override;
 
     virtual void display() override;
+
+    virtual SDL_Renderer* getSurface() override;
 
 private:
 

@@ -10,9 +10,6 @@ public:
 
     virtual void display() = 0;
 
-    T* getSurface() {return this->surface;};
-
-protected:
-    T* surface;
+    virtual T* getSurface() = 0;
 
 };

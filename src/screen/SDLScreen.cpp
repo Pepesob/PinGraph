@@ -21,6 +21,10 @@ void SDLScreen::display() {
     SDL_RenderPresent(this->renderer);
 }
 
+SDL_Renderer *SDLScreen::getSurface()
+{
+    return this->renderer;
+}
 
 void SDLScreen::init() {
     int rendererFlags, windowFlags;
@@ -34,16 +38,16 @@ void SDLScreen::init() {
         throw std::runtime_error(SDL_GetError());
     }
 
-    this->surface = SDL_CreateWindow("Shooter 01", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, this->window_width, this->window_height, windowFlags);
+    this->window = SDL_CreateWindow("Shooter 01", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, this->window_width, this->window_height, windowFlags);
 
-    if (this->surface == nullptr)
+    if (this->window == nullptr)
     {
         throw std::runtime_error(SDL_GetError());
     }
 
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 
-    this->renderer = SDL_CreateRenderer(this->surface, -1, rendererFlags);
+    this->renderer = SDL_CreateRenderer(this->window, -1, rendererFlags);
 
     if (this->renderer == nullptr)
     {

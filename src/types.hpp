@@ -1,6 +1,9 @@
 #pragma once
 
-typedef int AbsoluteValue;
+typedef struct {
+    int x;
+    int y;
+} Point2D;
 
 enum Axis {
     X, Y

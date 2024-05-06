@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../screen/Screen.hpp"
-
 template<typename T>
 class Drawable {
 public:
