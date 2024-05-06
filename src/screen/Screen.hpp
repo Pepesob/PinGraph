@@ -1,7 +1,7 @@
 #pragma once
-#include "../drawer/Drawable.hpp"
 
 
+template<typename T>
 class Screen {
 public:
     virtual ~Screen(){};
@@ -10,6 +10,9 @@ public:
 
     virtual void display() = 0;
 
-    virtual void render(Drawable& object) = 0;
+    T* getSurface() {return this->surface;};
+
+protected:
+    T* surface;
 
 };

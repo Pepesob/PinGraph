@@ -6,14 +6,12 @@
 #include <SDL2/SDL_video.h>
 
 
-class SDLScreen: public Screen {
+class SDLScreen: public Screen<SDL_Window> {
 
 public:
     SDLScreen(int window_width, int window_height);
 
     virtual void clear() override;
-
-    virtual void render(Drawable& object) override;
 
     virtual void display() override;
 

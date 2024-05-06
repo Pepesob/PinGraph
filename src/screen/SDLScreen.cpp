@@ -6,7 +6,7 @@
 
 
 SDLScreen::SDLScreen(int window_width, int window_height): window_width(window_width), window_height(window_height){
-
+    this->init();
 }
 
 
@@ -16,15 +16,10 @@ void SDLScreen::clear() {
 }
 
 
-void SDLScreen::render(Drawable& object){
-
-}
-
 
 void SDLScreen::display() {
     SDL_RenderPresent(this->renderer);
 }
-
 
 
 void SDLScreen::init() {
@@ -39,16 +34,16 @@ void SDLScreen::init() {
         throw std::runtime_error(SDL_GetError());
     }
 
-    this->window = SDL_CreateWindow("Shooter 01", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, this->window_width, this->window_height, windowFlags);
+    this->surface = SDL_CreateWindow("Shooter 01", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, this->window_width, this->window_height, windowFlags);
 
-    if (this->window == nullptr)
+    if (this->surface == nullptr)
     {
         throw std::runtime_error(SDL_GetError());
     }
 
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 
-    this->renderer = SDL_CreateRenderer(this->window, -1, rendererFlags);
+    this->renderer = SDL_CreateRenderer(this->surface, -1, rendererFlags);
 
     if (this->renderer == nullptr)
     {

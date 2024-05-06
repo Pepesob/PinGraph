@@ -10,7 +10,9 @@ include_directories(${SDL2_INCLUDE_DIRS})
 
 FILE(GLOB_RECURSE MyCSources *.cpp)
 
-add_executable(PinGraph ${MyCSources})
+# add_executable(PinGraph ${MyCSources})
+
+add_executable(PinGraph src/main.cpp src/screen/Screen.cpp src/screen/Screen.cpp src/screen/SDLScreen.cpp)
 
 
 target_link_libraries(PinGraph ${SDL2_LIBRARIES})

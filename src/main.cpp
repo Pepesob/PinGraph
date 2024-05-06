@@ -5,25 +5,35 @@
 #include <list>
 #include <vector>
 #include "types.hpp"
-#include "graph/GraphAbsolute.hpp"
+// #include "graph/GraphAbsolute.hpp"
+#include "screen/SDLScreen.hpp"
+#include "screen/Screen.hpp"
 
 
-void testGraphAbsolute(){
-    std::vector<AbsolutePoint> v;
+// void testGraphAbsolute(){
+//     std::vector<AbsolutePoint> v;
 
-    GraphAbsolute g;
-    g.readGraph(v.begin());
-    // g.test();
+//     GraphAbsolute g;
+//     g.readGraph(v.begin());
+//     // g.test();
  
-    for (auto it = v.begin(); it != v.end(); it++){
-        std::cout << *it << std::endl;
-    }
+//     for (auto it = v.begin(); it != v.end(); it++){
+//         std::cout << *it << std::endl;
+//     }
     
+// }
+
+
+void testSDLScreen() {
+    Screen<SDL_Window>* screen = new SDLScreen(100, 100);
+
+
+    std::cout << screen->getSurface() << std::endl;
 }
 
 
 int main(int argc, char* argv[]){
-    testGraphAbsolute();
+    testSDLScreen();
   
 }
 
