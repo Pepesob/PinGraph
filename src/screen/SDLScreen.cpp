@@ -9,6 +9,15 @@ SDLScreen::SDLScreen(int window_width, int window_height): window_width(window_w
     this->init();
 }
 
+SDLScreen::~SDLScreen(){
+    this->cleanUp();
+}
+
+void SDLScreen::cleanUp() {
+    if (this->window != nullptr) SDL_DestroyWindow(this->window);
+    if (this->renderer != nullptr) SDL_DestroyRenderer(this->renderer);
+}
+
 
 void SDLScreen::clear() {
     SDL_SetRenderDrawColor(this->renderer, 96, 128, 255, 255);
@@ -52,5 +61,22 @@ void SDLScreen::init() {
     if (this->renderer == nullptr)
     {
         throw std::runtime_error(SDL_GetError());
+    }
+}
+
+void SDLScreen::pollEvents(){
+    SDL_Event event;
+
+    while (SDL_PollEvent(&event))
+    {
+        switch (event.type)
+        {
+            case SDL_QUIT:
+                exit(0);
+                break;
+
+            default:
+                break;
+        }
     }
 }

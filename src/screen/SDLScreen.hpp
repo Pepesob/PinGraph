@@ -10,6 +10,7 @@ class SDLScreen: public Screen<SDL_Renderer> {
 
 public:
     SDLScreen(int window_width, int window_height);
+    ~SDLScreen();
 
     virtual void clear() override;
 
@@ -17,9 +18,12 @@ public:
 
     virtual SDL_Renderer* getSurface() override;
 
+    virtual void pollEvents() override;
+
 private:
 
     void init();
+    void cleanUp();
 
 
 private:

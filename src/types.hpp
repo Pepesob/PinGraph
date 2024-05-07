@@ -5,6 +5,8 @@ typedef struct {
     int y;
 } Point2D;
 
+typedef Point2D ScreenPoint;
+
 enum Axis {
     X, Y
 };

@@ -12,4 +12,6 @@ public:
 
     virtual T* getSurface() = 0;
 
+    virtual void pollEvents() = 0;
+
 };

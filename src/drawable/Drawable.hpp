@@ -6,5 +6,5 @@ public:
 
     virtual ~Drawable(){}
 
-    virtual void draw(T* screen) const = 0;
+    virtual void draw(T* screen) = 0;
 };

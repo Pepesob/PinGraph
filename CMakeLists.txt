@@ -12,7 +12,7 @@ FILE(GLOB_RECURSE MyCSources *.cpp)
 
 # add_executable(PinGraph ${MyCSources})
 
-add_executable(PinGraph src/main.cpp src/screen/Screen.cpp src/screen/Screen.cpp src/screen/SDLScreen.cpp src/graph/GraphValues2D.cpp)
+add_executable(PinGraph src/main.cpp src/screen/Screen.cpp src/screen/Screen.cpp src/screen/SDLScreen.cpp src/graph/GraphValues2D.cpp src/drawable/Graph2DDrawer.cpp)
 
 
 target_link_libraries(PinGraph ${SDL2_LIBRARIES})
