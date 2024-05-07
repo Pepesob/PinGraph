@@ -28,3 +28,7 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 target_link_libraries(PinGraph ${SDL2_LIBRARIES})
 
+# find_package(OpenGL REQUIRED)
+# include_directories(${OPENGL_INCLUDE_DIR})
+# target_link_libraries(PinGraph ${OPENGL_LIBRARIES})
+

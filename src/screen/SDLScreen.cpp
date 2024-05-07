@@ -47,7 +47,7 @@ void SDLScreen::init() {
         throw std::runtime_error(SDL_GetError());
     }
 
-    this->window = SDL_CreateWindow("Shooter 01", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, this->window_width, this->window_height, windowFlags);
+    this->window = SDL_CreateWindow("Graph", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, this->window_width, this->window_height, windowFlags);
 
     if (this->window == nullptr)
     {
