@@ -5,11 +5,10 @@
 #include <list>
 #include <vector>
 #include "types.hpp"
-// #include "graph/GraphAbsolute.hpp"
-#include "screen/SDLScreen.hpp"
-#include "screen/Screen.hpp"
-#include "graph/GraphValues2D.hpp"
-#include "drawable/Graph2DDrawer.hpp"
+#include "SDLScreen.hpp"
+#include "Screen.hpp"
+#include "GraphValues2D.hpp"
+#include "Graph2DDrawer.hpp"
 
 
 // void testGraphAbsolute(){
